@@ -1,0 +1,65 @@
+
+Date: 30th May 2024
+
+Subject:  Task 1:  Crack leaked password database
+
+The major results and analysis of my work are as follows. 
+
+Using the hashcat tool, I managed to crack 13/19 of the leaked passwords present in the given file. I tried some of the hashing algorithms like MD5 and MD4 and used one of the weakpass's wordlists as dictionary. Here are the results from the .potfile that were cracked using the MD5 hashing algorithm:
+
+f6a0cb102c62879d397b12b62c092c06:bluered
+25d55ad283aa400af464c76d713c07ad:12345678
+7c6a180b36896a0a8c02787eeafb0e4c:password1
+96e79218965eb72c92a549dd5a330112:111111
+25f9e794323b453885f5181f1b624d0b:123456789
+3f230640b78d7e71ac5514e57935eb69:qazxsw
+d8578edf8458ce06fbc5bb76a58c5ca4:qwerty
+917eb5e9d6d6bca820922a0c6f7cc28b:Pa$$word1
+e10adc3949ba59abbe56e057f20f883e:123456
+e99a18c428cb38d5f260853678922e03:abc123
+5f4dcc3b5aa765d61d8327deb882cf99:password
+fcea920f7412b5da7be0cf42b8c93759:1234567
+6c569aabbf7775ef8fc570e228c16b98:password!
+
+
+
+What type of hashing algorithm was used to protect passwords?
+
+The ones that I managed to crack were hashed using the MD5 Algorithm.
+
+
+
+What level of protection does the mechanism offer for passwords?
+
+MD5 (Message-Digest Algorithm 5) is commonly used to produce a 128-bit hash value, typically represented as a 32-character hexadecimal number.
+It is considered weak due to its susceptibility to collision attacks, where two different inputs produce the same hash output. This undermines its effectiveness for cryptographic security purposes.
+
+
+
+What controls could be implemented to make cracking much harder for the hacker in the event of a password database leaking again?    
+
+Using stronger Hash Algorithms like SHA-256 or SHA-3, which are less vulnerable to collisions and attacks.
+Implement Salting i.e. adding a unique salt to each input before hashing. This prevents attackers from using precomputed hash tables (rainbow tables) to crack the hashes.
+
+
+
+What can you tell about the organization’s password policy (e.g. password length, key space, etc.)?
+
+Here, we can observe that the organization used weak hashing algorithms without any protective salting.
+Also, very common and easily crackable passwords like 123456 or abc123 are used.
+Moreover, no usage of capital letters is observed.
+
+
+
+What would you change in the password policy to make breaking the passwords harder? 
+
+Increasing the password length to at least 12-16 characters as longer passwords exponentially increase the difficulty of brute-force attacks.
+Including a mix of uppercase and lowercase letters, numbers, and special characters. This increases the key space and makes guessing more difficult.
+Avoid using common passwords and phrases as they are easily crackable.
+Implementing real-time password strength checking through websites like https://howsecureismypassword.net/ .
+
+
+
+Thank you,
+
+Malaya Shekhar
